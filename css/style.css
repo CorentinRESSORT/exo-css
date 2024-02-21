@@ -1,0 +1,617 @@
+*, ::before, ::after
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+    /* Ajoute la police de Base */
+    font-family: var(--cata);
+}
+
+/* ------------------------------------------------------ */
+/*                         Variables                      */
+/* ------------------------------------------------------ */
+
+@font-face {
+    font-family: "Catamaran";
+    src: url(../assets/font/Catamaran/Catamaran-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Grand Hotel";
+    src: url(../assets/font/Grand_Hotel/GrandHotel-Regular.ttf);
+}
+
+:root
+{
+    --color-olive : #678e3e;
+    --color-blueh : #102a42;
+    --black       : #222222;
+
+    --background-article: #f1f5f8;
+    --cata : "Catamaran";
+    --grandh    : "Grand Hotel"
+}
+
+
+/* ------------------------------------------------------ */
+/*                       CSS Général                      */
+/* ------------------------------------------------------ */
+nav > ul
+{
+    position: absolute;
+    top: 0;
+    left:-50%;
+    background-color: var(--background-article);
+    height: 100%;
+    width: 50%;
+    transition-property: left;
+    transition-duration: 4s;
+    transition-delay: 2s;
+    z-index: 1;
+}
+nav > ul
+{
+    border-bottom: 1px solid gray;
+}
+
+
+/* Info Global */
+
+
+section
+{
+    letter-spacing: .1em;
+    padding: 3em 2em 3em 2em;
+}
+
+section > *
+{
+    margin-top: .1em;
+}
+
+article > *
+{
+    margin-bottom: 1em;
+}
+
+h2:not(form h2)
+{
+    font-family: var(--grandh);
+    color: var(--color-olive);
+}
+
+h3
+{
+    font-size: 1.5em;
+}
+
+h4
+{
+    font-family: var(--cata);
+    color: #102a47;
+}
+
+a, li
+{
+    list-style: none;
+    text-decoration: none;
+}
+
+p
+{
+    font-family: var(--cata);
+    color: #6782a7;
+}
+
+.backg
+{
+    background-color: #f1f5f8;
+}
+
+.button-ol
+{
+    width: 30%;
+    padding: 1% 4% 1% 4%;
+    background-color: var(--color-olive);
+    box-shadow: 0 0 1px black;
+    color: white;
+}
+
+.olive-text
+{
+    color: var(--color-olive);
+}
+
+
+/* MENU McDo */
+#menu, nav>ul
+{
+    display: none;
+}
+
+#menu+ul
+{
+    left: -50%;
+}
+
+#menu:checked+ul
+{
+    display: block;
+    left: 0;
+}
+
+/* HEADER */
+header
+{
+    position: relative;
+}
+header::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:url(../assets/image/main-bcg.jpeg);
+    filter: brightness(50%);
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+header > h2:last-of-type
+{
+    font-family: var(--cata);
+    color: white;
+}
+
+header a
+{
+    width: 30%;
+    background-color: var(--color-olive);
+    color: white;
+}
+
+#menu-icon
+{
+    float: left;
+    color: var(--color-olive);
+    font-size: 2em;
+}
+
+
+
+/* INFO */
+#gradient
+{
+    height: 0.5em;
+    background: linear-gradient(90deg, #6a8f3e, #e8b949, #6a8f3e);
+}
+
+.info-tea article
+{
+    text-align: center;
+}
+
+/* ABOUT */
+
+.about img
+{
+    border: .4em solid #678e3e;
+}
+
+/* Chek out */
+
+.checkout  article > p
+{
+    font-weight: bold;
+}
+
+.checkout img
+    {
+        margin: 0;
+        width: 100%;
+        border-radius:5%;
+    }
+
+/* Explore */
+
+#explore
+{
+    text-align: center;
+}
+
+#explore article
+{
+    position: relative;
+    background-color: var(--background-article);
+    box-shadow: 1px 1px 30px lightgray;
+    padding-bottom: 15%;
+}
+#explore article img:first-child
+{
+    border-radius: 3% 3% 0% 0%;
+    margin: 0;
+    width: 100%;
+}
+
+#explore > article > a
+{
+    border-radius: 5%;
+    box-shadow: 0 0 1px black;
+}
+
+#explore > article > img:nth-of-type(2)
+{
+    position: absolute;
+    top: 34%;
+    left: 34%;
+    width: 64px;
+    border-radius: 50%;
+    border: 5px solid var(--background-article);
+}
+
+/* Form */
+
+#form-foot form
+{
+    margin-top: 5%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 50px lightgray;
+}
+
+#form-foot form > *
+{
+    display: block;
+}
+#form-foot h2
+{
+    text-align: center;
+    color: var(--color-blueh);
+}
+
+#form-foot input:not([type="button"]), textarea
+{
+    width: 90%;
+    margin: 5%;
+    background-color: var(--background-article);
+    border-radius: 5%;
+    border: none;
+}
+
+#form-foot input::placeholder, textarea::placeholder
+{
+    padding-left: 2%;
+    color: #a5b5c4;
+}
+
+#form-foot input:is([type="button"])
+{
+    width: 100%;
+    border: none;
+    border-radius: 0 0 5px 5px;
+    color: white;
+    background-color: var(--color-olive);
+}
+
+/* footer */
+
+footer
+{
+    background-color: var(--black);
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+footer p
+{
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}
+
+footer ul
+{
+    
+    text-align: center;
+}
+footer li
+{
+    margin-left: 2%;
+    display: inline-block;
+}
+footer img
+{
+    background-color: white;
+    width: 24px;
+    border-radius: 50%;
+}
+/* ------------------------------------------------------ */
+/*                 Media Screen Smartphone                */
+/* ------------------------------------------------------ */
+
+@media screen and (max-width: 600px) {
+
+    #menu-icon
+    {
+        position: fixed;
+    }
+    header
+    {
+        position: relative;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+    }
+    header > h2:first-of-type
+    {
+        position: absolute;
+        width: 75%;
+        top: 30%;
+        left: 20%;
+    }
+    header > h2:nth-of-type(2)
+    {
+        position: absolute;
+        width: 50%;
+        top: 45%;
+        left: 30%;
+    }
+    header > a
+    {
+        padding: 5%;
+        position: absolute;
+        text-align: center;
+        left: 35%;
+        bottom: 5%;
+    }
+
+    /* Info */
+    .info-tea article
+    {
+        position: relative;
+        width: 70%;
+        left: 15%;
+    }
+
+    /* About */
+    .about img
+        {
+            position: relative;
+            margin-bottom: 5%;
+            left: 15%;
+            width: 70%;
+        }
+
+    /*checkout */
+
+    
+    /* Explore */
+    #explore article 
+    {
+        margin-bottom: 10%;
+    }
+
+    #explore article > h4
+    {
+        margin-bottom: 10%;
+    }
+
+}
+
+
+/* ------------------------------------------------------ */
+/*                 Media Screen Tablets                   */
+/* ------------------------------------------------------ */
+
+@media screen and (min-width : 601px) and (max-width : 1024px) {
+
+    #menu-icon
+    {
+        position: fixed;
+    }
+
+    header
+    {
+        height: 1000px;
+        font-size: 2em;
+    }
+
+    header > h2:first-of-type
+    {
+        text-align: center;
+        position: absolute;
+        width: 50%;
+        top: 30%;
+        left: 25%;
+    }
+    header > h2:nth-of-type(2)
+    {
+        text-align: center;
+        position: absolute;
+        width: 25%;
+        top: 45%;
+        left: 35%;
+    }
+    header > a
+    {
+        padding: 2%;
+        position: absolute;
+        text-align: center;
+        left: 35%;
+        bottom: 5%;
+    }
+
+    /* Info */
+    .info-tea article
+    {
+        display: inline-block;
+        width: 49%;
+    }
+
+    /* About */
+    .about img
+        {
+            position: relative;
+            margin-bottom: 5%;
+            width: 50%;
+        }
+
+    /* Checkout */
+
+    .checkout article
+    {
+        display: inline-block;
+        width: 50%;
+    }
+    /* Explore */
+    #explore article 
+    {
+        display: inline-block;
+        position: relative;
+        width: 40%;
+        margin-bottom: 10%;
+    }
+
+    #explore article >img:nth-child(2)
+    {
+        left: 40%;
+        top: 35%;
+    }
+
+    #explore article >img:nth-child(2)~h4
+    {
+        margin-top: 10%;
+    }
+
+    section 
+    {
+        padding: 5%;
+    }
+
+    h3
+    {
+        margin-left: none;
+    }
+
+    /* Form */
+
+    form
+    {
+        width: 75%;
+    }
+}
+
+/* ------------------------------------------------------ */
+/*                 Media Screen Desktop                   */
+/* ------------------------------------------------------ */
+
+@media screen and (min-width : 1024px) {
+
+    #menu
+    {
+        position: relative;
+    }
+    header
+    {
+        
+        height: 400px;
+    }
+
+    header > h2:first-of-type
+    {
+        text-align: center;
+        position: absolute;
+        top: 30%;
+        left: 40%;
+    }
+    header > h2:nth-of-type(2)
+    {
+        text-align: center;
+        position: absolute;
+        width: 25%;
+        top: 45%;
+        left: 40%;
+    }
+    header > a
+    {
+        position: relative;
+        text-align: center;
+        padding: 0 1em 0 1em;
+        left: 49%;
+        top: 80%;
+    }
+
+    /* Info */
+    .info-tea article
+    {
+        display: inline-block;
+        width: 49%;
+    }
+
+
+    /* About */
+    .about img
+        {
+            position: relative;
+            float: left;
+            margin-bottom: 5%;
+            margin-right: 2%;
+            width: 50%;
+        }
+    .about
+    {
+        margin-bottom: 5%;
+    }
+
+    /* Checkout */
+    .checkout > p
+    {
+        width: 20%;
+    }
+    .checkout article
+    {
+        display: inline-block;
+        width: 25%;
+    }
+    /* Explore */
+    #explore article 
+    {
+        display: inline-block;
+        position: relative;
+        width: 30%;
+        margin-bottom: 10%;
+    }
+
+    #explore article >img:nth-child(2)
+    {
+        left: 40%;
+        top: 30%;
+    }
+
+    #explore article >img:nth-child(2)~h4
+    {
+        margin-top: 10%;
+    }
+
+    section 
+    {
+        padding: 5%;
+    }
+
+    h3
+    {
+        margin-left: none;
+    }
+
+    /* Form */
+
+    form
+    {
+        display: inline-block;
+        width: 75%;
+    }
+}
